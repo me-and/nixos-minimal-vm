@@ -27,7 +27,7 @@
         packages.default = pkgs.writeShellScriptBin "runvm" ''
           set -euo pipefail
 
-          TMPDIR="$(mktemp -d)"
+          TMPDIR="$(mktemp --directory --tmpdir nixos-minimal-vm.$$.XXXXX)"
           export TMPDIR
           trap 'rm -rf -- "$TMPDIR"' EXIT
 
