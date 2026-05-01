@@ -14,6 +14,18 @@
     "-serial"
     "mon:stdio"
   ];
+
+  # Forward port 21 in the VM to port 2121 on the host loopback interface, so
+  # the host can connect to the VM on that port.
+  virtualisation.forwardPorts = [
+    {
+      from = "host";
+      host.address = "127.0.0.1";
+      host.port = 2121;
+      guest.port = 21;
+    }
+  ];
+
   environment =
     let
       resize = pkgs.writeShellScriptBin "resize" ''
