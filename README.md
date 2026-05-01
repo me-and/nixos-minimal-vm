@@ -9,3 +9,7 @@ To start the VM, assuming you have Nix flakes configured, you should be able to
 just run
 
     nix run github:me-and/nixos-minimal-vm
+
+## vsftpd branch
+
+This is a reproducer for NixOS/nixpkgs#515531.
