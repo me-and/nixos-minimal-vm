@@ -16,4 +16,9 @@
   services.getty.autologinUser = "nixos";
   security.sudo.wheelNeedsPassword = false;
   programs.bash.logout = "sudo systemctl poweroff";
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
