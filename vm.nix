@@ -8,12 +8,6 @@
 {
   imports = [ "${modulesPath}/virtualisation/qemu-vm.nix" ];
 
-  # Run the VM in the terminal rather than having a GUI.
-  virtualisation.graphics = false;
-  virtualisation.qemu.options = [
-    "-serial"
-    "mon:stdio"
-  ];
   environment =
     let
       resize = pkgs.writeShellScriptBin "resize" ''
